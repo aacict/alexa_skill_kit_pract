@@ -1,0 +1,200 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "hello giraffa",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloIntent",
+                    "slots": [
+                        {
+                            "name": "firstname",
+                            "type": "AMAZON.FirstName",
+                            "samples": [
+                                "my first name is {firstname}",
+                                "{firstname}",
+                                "its {firstname}"
+                            ]
+                        },
+                        {
+                            "name": "middlename",
+                            "type": "AMAZON.FirstName"
+                        },
+                        {
+                            "name": "lastname",
+                            "type": "AMAZON.FirstName"
+                        }
+                    ],
+                    "samples": [
+                        "hi its {firstname} {middlename} {lastname}",
+                        "hey this is {firstname} {middlename} {lastname}",
+                        "hey",
+                        "hi my name is {firstname} {middlename} {lastname}",
+                        "hello I am {firstname} {middlename} {lastname}",
+                        "hello"
+                    ]
+                },
+                {
+                    "name": "PlayfavSoundIntent",
+                    "slots": [],
+                    "samples": [
+                        "play again",
+                        "okay",
+                        "ok",
+                        "sure",
+                        "yes please",
+                        "play the audio",
+                        "play the sound",
+                        "yes",
+                        "play"
+                    ]
+                },
+                {
+                    "name": "LocationIntent",
+                    "slots": [],
+                    "samples": [
+                        "place",
+                        "I want to visit your place",
+                        "visit",
+                        "address",
+                        "location",
+                        "where is your location"
+                    ]
+                },
+                {
+                    "name": "ShowContactIntent",
+                    "slots": [],
+                    "samples": [
+                        "phone number",
+                        "my number",
+                        "show my phone number"
+                    ]
+                },
+                {
+                    "name": "RememberMyPhoneNumber",
+                    "slots": [
+                        {
+                            "name": "phone",
+                            "type": "AMAZON.PhoneNumber",
+                            "samples": [
+                                "its {phone}",
+                                "my number is {phone}",
+                                "{phone}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "remember my number",
+                        "{phone}"
+                    ]
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "HelloIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "firstname",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.896949345335.922078890971"
+                            }
+                        },
+                        {
+                            "name": "middlename",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "lastname",
+                            "type": "AMAZON.FirstName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "ShowContactIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": []
+                },
+                {
+                    "name": "RememberMyPhoneNumber",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "phone",
+                            "type": "AMAZON.PhoneNumber",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.633840877633.830248002345"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.896949345335.922078890971",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Could you please tell me your first name?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.896949345335.49275725772",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Nice, so your first name is {firstname} , Could you also provide me your family name?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.633840877633.830248002345",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "So, could you please provide us your number?"
+                    }
+                ]
+            }
+        ]
+    }
+}
